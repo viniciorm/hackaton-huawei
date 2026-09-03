@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: manual
 title: De una alerta 502 a una recuperación verificable
 description: Guía de caso de uso para un agente SRE autónomo
 ---

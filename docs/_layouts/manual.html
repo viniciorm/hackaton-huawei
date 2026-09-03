@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} · IR-Sentinel</title>
+  <meta name="description" content="{{ page.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/manual.css' | relative_url }}">
+</head>
+<body>
+  <div class="shell" id="top">
+    <header class="topbar">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Inicio">
+        <span class="brand-mark">✦</span><span>IR-Sentinel</span>
+      </a>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar en la guía" aria-label="Buscar en la guía"><kbd>/</kbd></label>
+      <nav class="top-actions"><a href="https://github.com/viniciorm/hackaton-huawei">GitHub</a><button id="theme" type="button">◐ <span>Oscuro</span></button></nav>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="eyebrow">DOCUMENTACIÓN <span>8 capítulos</span></div>
+        <nav class="chapters" aria-label="Capítulos del manual">
+          <a href="{{ '/articulo-api502.html#contexto' | relative_url }}"><b>01</b> Contexto</a>
+          <a href="{{ '/articulo-api502.html#como-evoluciono-la-propuesta' | relative_url }}"><b>02</b> Decisiones</a>
+          <a href="{{ '/articulo-api502.html#el-caso-de-uso' | relative_url }}"><b>03</b> Caso de uso</a>
+          <a href="{{ '/articulo-api502.html#arquitectura-implementada' | relative_url }}"><b>04</b> Arquitectura</a>
+          <a href="{{ '/articulo-api502.html#flujo-operativo' | relative_url }}"><b>05</b> Flujo operativo</a>
+          <a href="{{ '/articulo-api502.html#problemas-encontrados-y-aprendizajes' | relative_url }}"><b>06</b> Aprendizajes</a>
+          <a href="{{ '/articulo-api502.html#metodologia-de-calidad' | relative_url }}"><b>07</b> Validación</a>
+          <a href="{{ '/articulo-api502.html#reproducir-el-caso' | relative_url }}"><b>08</b> Reproducir</a>
+        </nav>
+        <div class="sidebar-rule"></div>
+        <p class="sidebar-note">Caso abierto de respuesta autónoma a incidentes, construido para aprender con evidencia.</p>
+        <a class="repo-link" href="https://github.com/viniciorm/hackaton-huawei">↗ Ir al repositorio</a>
+      </aside>
+      <main class="content">
+        <section class="hero">
+          <div class="kicker">GUÍA DE CASO DE USO · ACTUALIZADA EN SEPTIEMBRE DE 2026</div>
+          <h1>{{ page.title }}</h1>
+          <p class="lede">{{ page.description }}</p>
+          <div class="hero-meta"><span class="pill green">● Demo reproducible</span><span class="pill">Kostra · GLM-5.2</span><span class="pill">OpenCode · Docker</span></div>
+        </section>
+        <section class="architecture-card">
+          <div class="section-label">ARQUITECTURA RESUMIDA</div>
+          <h2>De la señal al aprendizaje</h2>
+          <div class="flow">
+            <div><strong>502</strong><span>Señal</span></div><i>→</i><div><strong>OBSERVE</strong><span>Evidencia</span></div><i>→</i><div><strong>DECIDE</strong><span>Política</span></div><i>→</i><div><strong>200</strong><span>Verificación</span></div>
+          </div>
+          <div class="flow-caption"><span>NGINX + FASTAPI</span><span>OPENCode + MCP</span><span>SNAPSHOT + RELOAD</span><span>ENGRAM</span></div>
+        </section>
+        <div class="document-note">Documento vivo. Resume el diseño, la implementación, los desafíos y las pruebas del agente. Debe actualizarse cuando evolucione la solución.</div>
+        <article class="prose" id="document">{{ content }}</article>
+        <footer class="footer"><span>Construir · Probar · Verificar</span><a href="https://github.com/viniciorm/hackaton-huawei">Código abierto en GitHub ↗</a></footer>
+      </main>
+    </div>
+  </div>
+  <script src="{{ '/assets/js/manual.js' | relative_url }}"></script>
+</body>
+</html>
