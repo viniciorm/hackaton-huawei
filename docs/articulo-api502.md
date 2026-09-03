@@ -17,7 +17,7 @@ límites explícitos, ejecuta una mitigación reversible y verifica el resultado
 
 El repositorio es [`alonso-porcell/hackaton-huawei`](https://github.com/alonso-porcell/hackaton-huawei).
 
-## Cómo evolucionó la propuesta
+## Cómo evolucionó la propuesta {#decisiones}
 
 La propuesta comenzó con una pregunta práctica: cómo habilitar un stack completo
 para una hackatón de agentes sin depender de una instalación frágil en Windows.
@@ -40,7 +40,7 @@ La conversación de diseño también dejó una decisión importante: la voz ser�
 mejora de experiencia, no una dependencia del flujo crítico. Por eso la entrada
 textual siempre funciona aunque el micrófono o el navegador no soporten voz.
 
-## El caso de uso
+## El caso de uso {#caso-de-uso}
 
 Nginx queda apuntando a `api:8999`, aunque FastAPI sigue escuchando correctamente.
 El usuario ve `502 Bad Gateway`, pero la API responde 200 si se consulta de forma
@@ -58,7 +58,7 @@ correlacionar:
 - logs de Nginx con conexión rechazada al puerto incorrecto;
 - configuración activa del upstream, sanitizada y con hash.
 
-## Arquitectura implementada
+## Arquitectura implementada {#arquitectura}
 
 | Capa | Implementación | Responsabilidad |
 |---|---|---|
@@ -74,7 +74,7 @@ correlacionar:
 El agente no recibe `docker.sock` ni una terminal genérica. El control de Nginx
 acepta sólo operaciones cerradas de validación y recarga.
 
-## Flujo operativo
+## Flujo operativo {#flujo}
 
 ```text
 OBSERVE → DIAGNOSE → PLAN → ACT → VERIFY → REPORT
@@ -123,7 +123,7 @@ En la validación, 30 líneas repetitivas se representaron como un patrón y 29
 duplicados no llegaron al contexto de GLM‑5.2. RTK queda como complemento posible,
 no como reemplazo del compresor determinista.
 
-## Problemas encontrados y aprendizajes
+## Problemas encontrados y aprendizajes {#aprendizajes}
 
 | Problema | Solución |
 |---|---|
@@ -137,7 +137,7 @@ no como reemplazo del compresor determinista.
 | El modelo podía devolver tool calls sin herramientas | Detectar el envelope y aplicar fallback por nodo |
 | Era necesario continuar en otro agente de desarrollo | Crear `HANDOFF_ANTIGRAVITY.md` con estado, límites y comandos |
 
-## Metodología de calidad
+## Metodología de calidad {#validacion}
 
 La implementación siguió tareas pequeñas y TDD en las reglas críticas. pytest cubre
 la API Python; las pruebas TypeScript cubren política, sanitización y compresión;
@@ -154,7 +154,7 @@ Resultados registrados:
 - diagnóstico real con Kostra/GLM‑5.2: 95% de confianza;
 - recuperación real: snapshot, restore, validación, reload y verificación 200.
 
-## Reproducir el caso
+## Reproducir el caso {#reproducir}
 
 Desde `casos/api502`:
 
