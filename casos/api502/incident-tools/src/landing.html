@@ -123,7 +123,7 @@
     }
     .cases-container {
       max-width: 1100px;
-      margin: 0 auto 60px;
+      margin: 0 auto 50px;
       padding: 0 24px;
     }
     .section-title {
@@ -138,6 +138,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
       gap: 24px;
+      margin-bottom: 40px;
     }
     @media (max-width: 768px) {
       .cases-grid { grid-template-columns: 1fr; }
@@ -212,10 +213,72 @@
       gap: 8px;
       transition: all 0.2s;
     }
+    .btn:hover { background: #30363d; }
     .btn-primary { background: #238636; border-color: rgba(240,246,252,0.1); color: #fff; }
     .btn-primary:hover { background: #2ea043; }
     .btn-purple { background: #8957e5; border-color: rgba(240,246,252,0.1); color: #fff; }
     .btn-purple:hover { background: #9e6cf2; }
+
+    /* QR Code Showcase Section */
+    .qr-section {
+      background: linear-gradient(145deg, #161b22, #0f141c);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .qr-info {
+      flex: 1;
+      min-width: 280px;
+    }
+    .qr-info h3 {
+      color: var(--text-bright);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .qr-info p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .qr-link-box {
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      word-break: break-all;
+    }
+    .qr-box {
+      background: #ffffff;
+      padding: 14px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .qr-box img {
+      display: block;
+      width: 170px;
+      height: 170px;
+    }
     .footer {
       text-align: center;
       padding: 32px;
@@ -236,6 +299,7 @@
     <div class="nav-links">
       <a href="/cases/api502" class="nav-link">Caso 1: api502</a>
       <a href="/cases/ir-pipeline" class="nav-link">Caso 2: Pipeline OODA</a>
+      <a href="https://viniciorm.github.io/hackaton-huawei" class="nav-link" target="_blank" style="color:var(--accent);">Doc en Vivo ↗</a>
       <a href="/engram/memories" class="nav-link" target="_blank">Memoria Engram</a>
       <a href="http://127.0.0.1:6080/" class="nav-link" target="_blank">Linux noVNC (:6080)</a>
       <a href="https://github.com/alonso-porcell/hackaton-huawei" class="btn" target="_blank" style="padding: 6px 12px; font-size: 0.85rem;">GitHub ↗</a>
@@ -315,6 +379,29 @@
       </div>
 
     </div>
+
+    <!-- SECCIÓN QR CODE -->
+    <section class="qr-section">
+      <div class="qr-info">
+        <span class="case-tag" style="background:var(--green-bg); color:var(--green); border:1px solid var(--green);">📱 Acceso Directo & Documentación</span>
+        <h3>📲 Escanea para abrir la Demo & Documentación</h3>
+        <p>
+          Accede directamente a la documentación técnica oficial del proyecto y al sitio en vivo publicado en GitHub Pages:
+        </p>
+        <div class="qr-link-box">
+          <span>https://viniciorm.github.io/hackaton-huawei</span>
+          <a href="https://viniciorm.github.io/hackaton-huawei" target="_blank" class="btn btn-primary" style="padding:4px 10px; font-size:0.8rem;">Abrir ↗</a>
+        </div>
+      </div>
+      <div class="qr-box">
+        <img 
+          src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fviniciorm.github.io%2Fhackaton-huawei&margin=6" 
+          alt="Código QR: https://viniciorm.github.io/hackaton-huawei" 
+          title="Escanea para ir a https://viniciorm.github.io/hackaton-huawei"
+        />
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
